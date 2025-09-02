@@ -1,0 +1,11 @@
+export const Input = ({ className, onChange }) => {
+  return (
+    <input
+      onChange={onChange}
+      className={
+        (className =
+          "border rounded-lg border-solid border-[#CBD5E1] w-[392px] p-3 placeholder:  text-base leading-5 font-normal h-11")
+      }
+    />
+  );
+};
