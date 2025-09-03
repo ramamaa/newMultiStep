@@ -1,6 +1,7 @@
 export const Input = ({ className, onChange }) => {
   return (
     <input
+      placeholder="Placeholder"
       onChange={onChange}
       className={
         (className =

@@ -1,5 +1,5 @@
 "use client";
-import { Basic, Image } from "@/components";
+import { Basic, Password, Image, Date } from "@/components";
 
 import { use, useState } from "react";
 
@@ -13,14 +13,20 @@ export default function Home() {
   });
 
   function submit() {
-    setStep("image");
+    setStep("password");
     ("");
   }
 
   if (step === "basic") {
     return <Basic form={form} onChange={setForm} onChangeStep={setStep} />;
   }
+  if (step === "password") {
+    return <Password onChangeStep={setStep} />;
+  }
   if (step === "image") {
-    return <Image />;
+    return <Image onChangeStep={setStep} />;
+  }
+  if (step === "date") {
+    return <Date onChangeStep={submit} />;
   }
 }

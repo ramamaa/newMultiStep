@@ -44,7 +44,9 @@ export function Basic({ form, onChange, onChangeStep }) {
                 })
               }
             />
-            <Button onClick={() => onChangeStep("image")}>Continue 1/3 </Button>
+            <Button onClick={() => onChangeStep("password")} className="mt-40 ">
+              Continue 1/3
+            </Button>
           </div>
         </div>
       </div>

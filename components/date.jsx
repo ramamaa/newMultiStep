@@ -1,12 +1,12 @@
 import { Button, Header } from "@/components";
 
-export function Image({ onChangeStep }) {
+export function Date({ onChangeStep }) {
   return (
     <div>
       <div className="bg-white w-120 h-[655px] mt-[182px] mx-120 border rounded-lg border-white p-8">
         <Header></Header>
-        <Button onClick={() => onChangeStep("password")}>Back</Button>
-        <Button onClick={() => onChangeStep("date")}>Continue 3/3</Button>
+        <Button onClick={() => onChangeStep("image")}>Back</Button>
+        <Button onClick={onChangeStep}>Submit</Button>
       </div>
     </div>
   );
