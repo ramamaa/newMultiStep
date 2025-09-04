@@ -44,7 +44,11 @@ export function Basic({ form, onChange, onChangeStep }) {
                 })
               }
             />
-            <Button onClick={() => onChangeStep("password")} className="mt-40 ">
+            <Button
+              variant="primary"
+              onClick={() => onChangeStep("password")}
+              className="mt-40 "
+            >
               Continue 1/3
             </Button>
           </div>

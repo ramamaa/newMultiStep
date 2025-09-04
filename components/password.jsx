@@ -10,31 +10,31 @@ export function Password({ onChangeStep }) {
             <Title className=" ">Email</Title>
             <Input
               type="text"
-              className="mt-2 ml-8 w-[368px] h-[44px] border border-[#E4E4E7] rounded-md"></Input>
+              className="mt-2 ml-8 w-[368px] h-[44px] border border-[#E4E4E7] rounded-md"
+            ></Input>
             <Title className=" ">Username</Title>
             <Input
               type="text"
-              className="mt-2 ml-8 w-[368px] h-[44px] border border-[#E4E4E7] rounded-md"></Input>
+              className="mt-2 ml-8 w-[368px] h-[44px] border border-[#E4E4E7] rounded-md"
+            ></Input>
             <Title className=" ">Password</Title>
             <Input
               type="text"
-              className="mt-2 ml-8 w-[368px] h-[44px] border border-[#E4E4E7] rounded-md"></Input>
+              className="mt-2 ml-8 w-[368px] h-[44px] border border-[#E4E4E7] rounded-md"
+            ></Input>
             <Title className=" ">Confirm Password</Title>
             <Input
               type="text"
-              className="mt-2 ml-8 w-[368px] h-[44px] border border-[#E4E4E7] rounded-md"></Input>
+              className="mt-2 ml-8 w-[368px] h-[44px] border border-[#E4E4E7] rounded-md"
+            ></Input>
           </div>
         </div>
 
         <div className="mt-8 gap-1 flex">
-          <button
-            className="  border rounded-md h-11 w-[128px]  flex justify-center items-center text-black bg-white py-2.5 px-3 "
-            onClick={() => onChangeStep("basic")}>
+          <Button variant={"secondary"} onClick={() => onChangeStep("basic")}>
             Back
-          </button>
-          <Button
-            className=" border rounded-md h-11 w-[280px] flex justify-center items-center text-white bg-black py-2.5 px-3 "
-            onClick={() => onChangeStep("image")}>
+          </Button>
+          <Button variant={"primary"} onClick={() => onChangeStep("image")}>
             Continue 2/3
           </Button>
         </div>

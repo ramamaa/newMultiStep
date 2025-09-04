@@ -1,6 +1,7 @@
-export const Input = ({ className, onChange }) => {
+export const Input = ({ className, onChange, type }) => {
   return (
     <input
+      type={type}
       placeholder="Placeholder"
       onChange={onChange}
       className={
