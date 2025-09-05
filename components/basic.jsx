@@ -1,7 +1,37 @@
 "use client";
 import { Title, Input, Button, Header } from "@/components";
+import { useState } from "react";
 
 export function Basic({ form, onChange, onChangeStep }) {
+  const [errors, setErrors] = useState({});
+  function gotoNext() {
+    // validate
+    const newErrors = {};
+
+    const nameRegex = /^[a-zA-Z]{3,16}$/;
+    const usernameRegex = /^[a-zA-Z0-9_]{3,16}$/;
+    if (nameRegex.test(form.firstName)) {
+      newErrors.firstName = null;
+    } else {
+      newErrors.firstName = "You must enter your name";
+    }
+    if (nameRegex.test(form.lastName)) {
+      newErrors.lastName = null;
+    } else {
+      newErrors.lastName = "You must enter your name";
+    }
+    if (usernameRegex.test(form.username)) {
+      newErrors.username = null;
+    } else {
+      newErrors.username = "You must enter your name";
+    }
+    setErrors(newErrors);
+
+    if (!newErrors.firstName && !newErrors.lastName && !newErrors.username)
+      onChangeStep("password");
+  }
+  console.log(errors);
+
   return (
     <div>
       <div className="bg-white w-120 h-[655px] mt-[182px] mx-120 border rounded-lg border-white p-8">
@@ -20,6 +50,9 @@ export function Basic({ form, onChange, onChangeStep }) {
                 })
               }
             />
+            {errors.firstName && (
+              <div className="text-red-400">{errors.firstName}</div>
+            )}
             <Title className="flex flex-row gap-0.5">Last name</Title>
             <Input
               placeholder="Placeholder"
@@ -32,6 +65,9 @@ export function Basic({ form, onChange, onChangeStep }) {
                 })
               }
             />
+            {errors.lastName && (
+              <div className="text-red-400">{errors.firstName}</div>
+            )}
             <Title className="flex flex-row gap-0.5">Username</Title>
             <Input
               placeholder="Placeholder"
@@ -44,11 +80,10 @@ export function Basic({ form, onChange, onChangeStep }) {
                 })
               }
             />
-            <Button
-              variant="primary"
-              onClick={() => onChangeStep("password")}
-              className="mt-40 "
-            >
+            {errors.username && (
+              <div className="text-red-400">{errors.firstName}</div>
+            )}
+            <Button variant="primary" onClick={gotoNext} className="mt-40 ">
               Continue 1/3
             </Button>
           </div>

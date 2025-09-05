@@ -10,6 +10,9 @@ export default function Home() {
     firstName: "",
     lastName: "",
     username: "",
+    email: "",
+    phone: "",
+    password: "",
   });
 
   function submit() {
@@ -21,10 +24,10 @@ export default function Home() {
     return <Basic form={form} onChange={setForm} onChangeStep={setStep} />;
   }
   if (step === "password") {
-    return <Password onChangeStep={setStep} />;
+    return <Password form={form} onChange={setForm} onChangeStep={setStep} />;
   }
   if (step === "image") {
-    return <Image onChangeStep={setStep} />;
+    return <Image form={form} onChange={setForm} onChangeStep={setStep} />;
   }
   if (step === "date") {
     return <Date onChangeStep={submit} />;
